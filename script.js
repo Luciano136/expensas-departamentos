@@ -7,6 +7,13 @@ const pisos = [];
 // Tabla donde se agregarán los departamentos
 const tableBody = document.querySelector("#data-table tbody");
 
+// Categoria de expensas
+const prices = {
+  Bajo: 100,
+  Medio: 200,
+  Alto: 300
+};
+
 // Función para agregar una fila a la tabla
 function addRow() {
   const metrosInput = document.getElementById("metros");
@@ -28,7 +35,7 @@ function addRow() {
 }
 
   // Validacion de letra y no numero
-if (letra.length !== 1 || letra.toUpperCase() < "A" || letra.toUpperCase() > "Z") {
+if (!/^[A-Z]$/.test(letra)) {
   alert("Ingrese una letra válida para el departamento.");
   return;
 }
@@ -57,7 +64,7 @@ if (existe) {
 
   // Guardar los datos en el array
   const departamento = ({
-    numero: departments.length + 1,
+    numero: Date.now(),
     id, // lo agregue
     piso, // lo agregue
     letra, // lo agregue
@@ -90,7 +97,7 @@ agregarDepartamentoAPiso(departamento);
 
   // Celda para la categoría de expensas
   const cellCategory = document.createElement("td");
-  cellCategory.textContent = `${category} (${category === "Bajo" ? "100 USD" : category === "Medio" ? "200 USD" : "300 USD"})`;
+  cellCategory.textContent = `${category} (${prices[category]} USD)`;
   cellCategory.classList.add("category");
 
   // Agregar celdas a la fila
@@ -104,7 +111,9 @@ agregarDepartamentoAPiso(departamento);
   tableBody.appendChild(row);
 
   // Limpiar el campo de entrada
-  metrosInput.value = "";
+document.getElementById("metros").value = "";
+document.getElementById("piso").value = "";
+document.getElementById("letra").value = "";
 }
 
 // Función para mostrar el resumen de las categorías
