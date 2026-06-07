@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cálculo de Expensas</title>
+  <link rel="stylesheet" href="style.css" />
+
+</head>
+<body>
+  <h1>Cálculo de Expensas por Departamento</h1>
+  <table id="data-table">
+    <thead>
+      <tr>
+        <!-- <th>#</th>  lo saque -->
+        <th>ID</th>  <!-- lo agregue -->
+        <th>Piso</th> <!-- lo agregue -->
+        <th>Depto</th> <!-- lo agregue -->
+        <th>Metros Cuadrados</th>
+        <th>Expensas (Categoría)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Aquí se agregarán las filas dinámicamente -->
+    </tbody>
+  </table>
+
+  <label for="piso">Piso:</label> <!-- lo agregue -->
+  <input type="number" id="piso" min="1" placeholder="Ej: 1"> <!-- lo agregue -->
+
+  <label for="letra">Departamento:</label> <!-- lo agregue -->
+  <input type="text" id="letra" maxlength="1" placeholder="Ej: A"> <!-- lo agregue -->
+
+  <label for="metros">Metros cuadrados del departamento:</label>
+  <input type="number" id="metros" min="1" placeholder="Ej: 50">
+
+  <button onclick="addRow()">Agregar Departamento</button>
+  <button onclick="showSummary()">Mostrar Resumen</button>
+  <button onclick="mostrarPisos()">Mostrar Pisos</button> <!-- lo agregue -->
+
+  <div class="resumen-container"> <!-- lo agregue -->
+  
+    <div id="result" class="result" style="display: none;">
+      <h2>Resumen de Categorías</h2>
+      <div class="categories">
+        <div class="category-column">
+          <h3>Bajo (100 USD)</h3>
+          <ul id="low-category"></ul>
+        </div>
+          <div class="category-column">
+            <h3>Medio (200 USD)</h3>
+            <ul id="medium-category"></ul>
+          </div>
+        <div class="category-column">
+          <h3>Alto (300 USD)</h3>
+          <ul id="high-category"></ul>
+        </div>
+      </div>
+    </div>
+
+    <section id="pisos-container" class="result" style="display: none;"> <!-- lo agregue -->
+      <h2>Pisos del Edificio</h2> <!-- lo agregue -->
+    </section> <!-- lo agregue -->
+
+  </div> <!-- lo agregue -->
+
+  <script src="script.js"></script>
+</body>
+</html>
