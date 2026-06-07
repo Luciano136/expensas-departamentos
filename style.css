@@ -1,21 +1,21 @@
 body {
-  max-width: 1200px; /* lo agregue */
-  margin: 20px auto; /* lo agregue */
+  max-width: 1200px;
+  margin: 20px auto;
   font-family: Arial, sans-serif;
   background-color: #000;
   color: #fff;
 }
 
-h1 { /* lo agregue */
-  text-align: center; /* lo agregue */
-} /* lo agregue */
+h1 { 
+  text-align: center;
+} 
 
-table { /* lo agregue */
-  width: 80%; /* lo agregue */
-  margin: 0 auto 20px auto; /* lo agregue */
-  border-collapse: collapse; /* lo agregue */
+table { 
+  width: 80%; 
+  margin: 0 auto 20px auto; 
+  border-collapse: collapse;
   table-layout: auto;
-} /* lo agregue */
+} 
 
 table, th, td {
 border: 1px solid #ffffff62;
